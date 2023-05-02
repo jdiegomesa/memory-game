@@ -1,0 +1,81 @@
+$color1: #3D5B81;
+$color2: #9BC0D9;
+$color3: #DFFBFC;
+$color4: #EE6B4D;
+$color5: #293241;
+$font: 'Poppins', sans-serif;
+$regular: 400;
+$medium: 500;
+$title-size-desktop: 48px;
+$subtitle-size-desktop: 20px;
+$text-size-desktop: 16px;
+$title-size-mobile: 9vw;
+$subtitle-size-mobile: 20px;
+$text-size-mobile: 3vw;
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+      @content
+    }
+};
+
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width: 1200px) {
+      @content
+    }
+};
+
+@mixin mobile {
+    @media screen and (max-width: 600px) {
+      @content
+    }
+};
+
+@mixin title($color: $color5){
+  font-family: $font;
+  font-weight: $regular;
+  color: $color;
+  font-size: $title-size-desktop;
+  @include mobile{
+    color: $color2;
+  };
+};
+
+@mixin subtitle($color: $color5){
+  font-family: $font;
+  font-weight: $regular;
+  color: $color;
+  font-size: $subtitle-size-desktop;
+  @include mobile{
+    color: $color2;
+  };
+};
+@mixin normal_text($color: $color5){
+  font-family: $font;
+  font-weight: $regular;
+  color: $color;
+  font-size: $text-size-desktop;
+  @include mobile{
+    color: $color2;
+  };
+};
+
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: none;
+  color: #000;
+}
+body{
+  background-color: red;
+}
+
+h1{
+  
+  @include title($color1);
+}
+p{
+  @include normal_text;
+}

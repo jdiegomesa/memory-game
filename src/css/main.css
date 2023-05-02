@@ -1,0 +1,93 @@
+@custom-media --desktop (min-width: 1280px);
+@custom-media --tablet (min-width: 600px) and (max-width: 1200px);
+@custom-media --mobile (max-width: 600px);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .caja .azul{
+    @apply w-40 h-64 bg-one;
+  }
+  .caja .rojo{
+    @apply w-40 h-64 bg-four;
+  }
+  .title{
+    @apply font-Text font-normal;
+    font-size: 9vw;
+    @media(--desktop){
+      font-size: 48px;
+    }
+  }
+  .subtitle{
+    @apply font-Text font-medium;
+    font-size: 3.75vw;
+    @media(--desktop){
+      font-size: 20px;
+    }
+  }
+  .normal-text{
+    @apply font-Text font-normal;
+    font-size: 3vw;
+    @media(--desktop){
+      font-size: 16px;
+    }
+  }
+}
+
+.caja{
+  & .azul{
+    position: absolute;
+    transition-duration: 1s;
+    backface-visibility: hidden;
+    transform: perspective(2000px) rotateY(-180deg);
+  }
+  & .rojo{
+    transition-duration: 1s;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: perspective(2000px) rotateY(0deg);
+  }
+  &:hover{
+    & .azul{
+      transform: perspective(2000px) rotateY(0deg);
+    }
+    & .rojo{
+      transform: perspective(2000px) rotateY(180deg);
+    }
+  }
+}
+.MGModal{
+  background-color: rgba(0,0,0,.8);
+  &-container{
+    background-color: #fff;
+  }
+}
+
+.MGCards{
+  &-element{
+    width: 30%;
+    &-front{
+      transition-duration: 1s;
+      backface-visibility: hidden;
+      transform: rotateY(-180deg);
+    }
+    &-back{
+      transition-duration: 1s;
+      backface-visibility: hidden;
+      transform: rotateY(0deg);
+      top: 0;
+      left: 0;
+      background: #fff url('./assets/crossline-lines.png') center repeat;
+    }
+    &:hover{
+      & .MGCards-element-back{
+        transform: rotateY(180deg);
+      }
+      & .MGCards-element-front{
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}
