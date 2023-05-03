@@ -10,6 +10,7 @@ module.exports = {
   plugins: _objectSpread({
     'postcss-import': {},
     'tailwindcss/nesting': {},
+    'postcss-custom-media': {},
     tailwindcss: {},
     autoprefixer: {},
     'postcss-sort-media-queries': {}

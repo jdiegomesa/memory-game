@@ -9,42 +9,42 @@ html
     link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet")
     link(rel="stylesheet", href="main.css")
   body
-    header.MGHeader.flex.flex-col 
-      .MGHeader-title.bg-five.w-screen.rounded-b-xl.py-2
-        h1(class="MGHeader-title-text title w-4/5 ml-auto mr-auto text-center text-three") Memory Game
-      div(class="MGHeader-data w-11/12 ml-auto mr-auto")
+    header(class="MGHeader flex flex-col lg:flex-row max-w-7xl mx-auto lg:justify-between lg:mb-10") 
+      div(class="MGHeader-title bg-five w-screen rounded-b-xl py-2 lg:w-2/5 lg:flex lg:items-center")
+        h1(class="MGHeader-title-text title w-4/5 mx-auto text-center text-three") Memory Game
+      div(class="MGHeader-data w-11/12 mx-auto lg:w-2/5 lg:mx-0")
         .MGHeader-data-element.w-full
           .MGHeader-data-element-text.subtitle.py-1 Movimientos 
           .MGHeader-data-element-bar.w-full.bg-five.rounded-xl
-            div(class="MGHeader-data-element-bar-color w-1/3 bg-three rounded-xl flex justify-center")
+            div(class="MGHeader-data-element-bar-color bg-three rounded-xl flex justify-center duration-500 overflow-hidden")
               .MGHeader-data-element-bar-text.normal-text 10
         .MGHeader-data-element.w-full
           .MGHeader-data-element-text.subtitle.py-1 Aciertos
           .MGHeader-data-element-bar.w-full.bg-five.rounded-xl
-            div(class="MGHeader-data-element-bar-color w-2/3 bg-two rounded-xl flex justify-center")
+            div(class="MGHeader-data-element-bar-color bg-two rounded-xl flex justify-center duration-500 overflow-hidden")
               .MGHeader-data-element-bar-text.normal-text 10
         .MGHeader-data-element.w-full
           .MGHeader-data-element-text.subtitle.py-1 Errores 
           .MGHeader-data-element-bar.w-full.bg-five.rounded-xl
-            div(class="MGHeader-data-element-bar-color w-3/3 bg-four rounded-xl flex justify-center")
+            div(class="MGHeader-data-element-bar-color bg-four rounded-xl flex justify-center duration-500 overflow-hidden")
               .MGHeader-data-element-bar-text.normal-text 10
-    main(class="MGCards flex flex-row flex-wrap w-11/12 mx-auto my-3 justify-between")
+    main(class="MGCards flex flex-row flex-wrap w-11/12 mx-auto my-3 justify-between max-w-7xl lg:w-full")
       section.MGModal.w-full.h-full.fixed.inset-0.flex.items-center.justify-center.z-10.hidden
-        div(class="MGModal-container w-10/12 rounded-2xl flex flex-col justify-center p-8")
+        div(class="MGModal-container w-10/12 rounded-2xl flex flex-col justify-center p-8 lg:w-1/3")
           h2.MGModal-title.title.text-center Bienvenid@
           p.MGModal-text.normal-text.text-center Ingresa tu nombre
           input.MGModal-input.border-five.border-2.rounded-md.normal-text.p-2.my-2
-          button.MGModal-button.normal-text.bg-one.rounded-md.w-max.py-2.px-4.mx-auto.mt-2.text-three Siguiente
-      section.MGModal.w-full.h-full.fixed.inset-0.flex.items-center.justify-center.z-10
-        div(class="MGModal-container w-10/12 rounded-2xl flex flex-col justify-center p-8")
+          button(class="MGModal-button.normal-text bg-one rounded-md w-max py-2 px-4 mx-auto mt-2 text-three hover:bg-four duration-500") Siguiente
+      section.MGModal.w-full.h-full.fixed.inset-0.flex.items-center.justify-center.z-10.hidden
+        div(class="MGModal-container w-10/12 rounded-2xl flex flex-col justify-center p-8 lg:w-1/3")
           h2.MGModal-title.title.text-center Hola Juan
-          p.MGModal-text.normal-text.teaxt-center Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit commodi illo libero sapiente, corporis, ut obcaecati dignissimos quis, laboriosam dolore tenetur. Doloribus suscipit quod totam autem repudiandae, quas accusantium repellat.
-          button.MGModal-button.normal-text.bg-one.rounded-md.w-max.py-2.px-4.mx-auto.mt-2.text-three Iniciar juego
+          p.MGModal-text.normal-text.text-center Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit commodi illo libero sapiente, corporis, ut obcaecati dignissimos quis, laboriosam dolore tenetur. Doloribus suscipit quod totam autem repudiandae, quas accusantium repellat.
+          button(class="MGModal-button.normal-text bg-one rounded-md w-max py-2 px-4 mx-auto mt-2 text-three hover:bg-four duration-500") Iniciar juego
       each _ in Array(18)
         div(class="MGCards-element relative rounded-md overflow-hidden mb-3 z-0")
           .MGCards-element-back.absolute.duration-1000.w-full.h-full
           .MGCards-element-front.w-full.p-2.duration-1000.bg-two
             .MGCards-element-front-image.aspect-w-2.aspect-h-3
               img.object-cover(src="https://cloud.modyocdn.com/uploads/4a1b66ba-ba4e-438d-be40-d9960818e06a/original/bear.jpg", alt="")
-    footer(class=".MGFooter bg-five w-screen rounded-t-xl py-3")
+    footer(class="MGFooter bg-five w-screen rounded-t-xl py-3 lg:py-7")
       p.MGFooter-text.normal-text.text-three.text-center Desarrollado por Juan D. Mesa
